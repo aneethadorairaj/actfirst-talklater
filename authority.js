@@ -1,0 +1,3 @@
+function onAuthority() {
+  alert("hello");
+}

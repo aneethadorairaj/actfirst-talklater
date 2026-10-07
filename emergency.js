@@ -1,0 +1,3 @@
+function onEmergency() {
+  alert("hello");
+}
