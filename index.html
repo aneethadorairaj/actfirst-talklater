@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Act</title>
+  <title>Act First - Talk Later</title>
   <style>
+    /* Reset & Page Background */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -16,76 +17,119 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #f0f2f5;
-      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
     }
 
+    /* Main Card Container */
     .container {
       background: #ffffff;
-      border: 2px solid #4a90e2;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(74, 144, 226, 0.2);
-      padding: 48px 64px;
+      width: 100%;
+      max-width: 440px;
+      padding: 36px 28px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       text-align: center;
     }
 
+    /* Headings */
     h1 {
-      font-size: 2.5rem;
-      color: #2c3e50;
-      margin-bottom: 36px;
-      letter-spacing: 2px;
+      font-size: 1.8rem;
+      color: #1e293b;
+      margin-bottom: 8px;
     }
 
+    .subtitle {
+      font-size: 0.95rem;
+      color: #64748b;
+      margin-bottom: 24px;
+    }
+
+    /* Button Column Layout */
     .buttons {
       display: flex;
-      gap: 16px;
-      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
     }
 
-    button {
-      padding: 14px 28px;
+    /* Shared Styles for both <button> and <a> links */
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 14px 18px;
       font-size: 1rem;
       font-weight: 600;
+      text-decoration: none;
+      text-align: center;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
-      transition: transform 0.1s ease, box-shadow 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      transition: transform 0.15s ease, filter 0.15s ease;
     }
 
-    button:hover {
+    .btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      filter: brightness(1.05);
     }
 
-    button:active {
+    .btn:active {
       transform: translateY(0);
     }
 
+    /* Individual Color Themes */
     .btn-event {
-      background-color: #4a90e2;
-      color: #fff;
+      background-color: #3b82f6; /* Vibrant Blue */
+      color: #ffffff;
     }
 
     .btn-emergency {
-      background-color: #e74c3c;
-      color: #fff;
+      background-color: #ef4444; /* Alert Red */
+      color: #ffffff;
+    }
+
+    .btn-emergency-secondary {
+      background-color: #f87171; /* Soft Alert Red */
+      color: #ffffff;
     }
 
     .btn-authority {
-      background-color: #2ecc71;
-      color: #fff;
+      background-color: #10b981; /* Safe Green */
+      color: #ffffff;
     }
   </style>
 </head>
 <body>
+
   <div class="container">
-    <h1>Act</h1>
+    <h1>Act First – Talk Later</h1>
+    <p class="subtitle">Quick Access Emergency Demo</p>
+
     <div class="buttons">
-      <button class="btn-event" onclick="onEvent()">Event</button>
-      <button class="btn-emergency" onclick="onEmergency()">Emergency</button>
-      <button class="btn-authority" onclick="onAuthority()">Authority</button>
+      <!-- Event Action -->
+      <button class="btn btn-event" onclick="onEvent()">
+        📋 Show Nearby Events
+      </button>
+
+      <!-- Primary Emergency Phone -->
+      <a href="tel:+14805777598" class="btn btn-emergency">
+        📞 Call Primary: (480) 577-7598
+      </a>
+
+      <!-- Secondary Emergency Phone -->
+      <a href="tel:+14805777598" class="btn btn-emergency-secondary">
+        📞 Call Secondary: (480) 577-7598
+      </a>
+
+      <!-- Authority Action -->
+      <button class="btn btn-authority" onclick="onAuthority()">
+        🛡️ Alert Authority
+      </button>
     </div>
   </div>
+
+  <!-- Scripts -->
   <script src="event.js"></script>
   <script src="emergency.js"></script>
   <script src="authority.js"></script>
